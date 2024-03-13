@@ -11,32 +11,32 @@
 
 int solution(int N)
 {
-		int i = 0;
-		int j = 0;
-		int count = 0;
+	int i = 0;
+	int j = 0;
+	int count = 0;
 
-		if (N < 0)
-				return (0);
+	if (N < 0)
+		return (0);
 
-		while (N > 0)
+	while (N > 0)
+	{
+		if (N & 1)
 		{
-				if (N & 1)
-				{
-						if (j > i)
-						{
-								i = j;
-						}
-						j = 0;
-				}
-				else
-				{
-						j++;
-				}
-				N >>= 1;
+			if (j > i)
+			{
+				i = j;
+			}
+			j = 0;
 		}
-		if (i > count)
+		else
 		{
-				count = i;
+			j++;
 		}
-		return (count);
+		N >>= 1;
+	}
+	if (i > count)
+	{
+		count = i;
+	}
+	return (count);
 }
