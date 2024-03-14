@@ -9,7 +9,7 @@
 int main(void)
 {
 	int N = 1041;
-	int M = 34;
+	int M = 32;
 	int X = 10;
 	int G = -30;
 	int J = 200;

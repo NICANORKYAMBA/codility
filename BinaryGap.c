@@ -12,8 +12,7 @@
 int solution(int N)
 {
 	int i = 0;
-	int j = 0;
-	int count = 0;
+	int j = -1;
 
 	if (N < 0)
 		return (0);
@@ -22,7 +21,7 @@ int solution(int N)
 	{
 		if (N & 1)
 		{
-			if (j > i)
+			if (j >= 0 && j > i)
 			{
 				i = j;
 			}
@@ -30,13 +29,17 @@ int solution(int N)
 		}
 		else
 		{
-			j++;
+			if (j >= 0)
+			{
+				j++;
+			}
 		}
 		N >>= 1;
 	}
-	if (i > count)
+	if (j > i)
 	{
-		count = i;
+		i = j;
 	}
-	return (count);
+
+	return (i);
 }
